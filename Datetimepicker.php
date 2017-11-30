@@ -30,6 +30,7 @@ class Datetimepicker extends InputWidget{
     private $_template = '<div class="form-group"><div class="input-group">{icon}{input}</div></div>'; 
     private $_icon = '<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>';
     
+    public $_class = 'form-control';
     public $_beauty = true;
     public $_format = 'YYYY-MM-DD';
     public $_language = 'zh-cn'; //en-au,en-ca,en-gb,en-ie,en-nz,zh-cn,zh-hk,zh-tw,ja,ko...
@@ -49,7 +50,9 @@ class Datetimepicker extends InputWidget{
         
         $_template = $this->_beauty === true ? strtr($this->_template, ['{icon}' => $this->_icon]) : '{input}';
         
-        $this->options['class'] = empty($this->options['class']) ? 'form-control' : 'form-control '.$this->options['class'];
+        if(!empty($this->_class)){
+            $this->options['class'] = empty($this->options['class']) ? $this->_class : $this->_class.' '.$this->options['class'];
+        }
         
         if($this->hasModel()){
             $input = strtr($_template, ['{input}' => Html::activeTextInput($this->model, $this->attribute, $this->options)]);
