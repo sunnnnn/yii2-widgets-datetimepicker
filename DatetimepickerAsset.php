@@ -1,11 +1,11 @@
 <?php
-namespace app\components\widgets\datetimepicker;
+namespace sunnnnn\datetimepicker;
 
 use yii\web\AssetBundle;
 
 class DatetimepickerAsset extends AssetBundle{ 
     
-    public $sourcePath = '@app/components/widgets/datetimepicker';
+    public $sourcePath = __DIR__;
     
     public $css = [
         'css/bootstrap-datetimepicker.min.css'
