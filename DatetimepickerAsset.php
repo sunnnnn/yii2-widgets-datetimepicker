@@ -12,7 +12,8 @@ class DatetimepickerAsset extends AssetBundle{
     ];
     
     public $js = [
-        'js/moment/moment-with-locales.min.js',
+        'js/moment/moment.min.js',
+        'js/moment/locales.min.js',
         'js/bootstrap-datetimepicker.min.js'
     ];
     
